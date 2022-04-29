@@ -34,7 +34,7 @@ pipeline {
         }
         stage('CanaryDeploy') {
            environment { 
-                CANARY_REPLICAS = 1
+                CANARY_REPLICAS = 172.31.30.98
             }
             steps {
                 kubernetesDeploy(
@@ -46,7 +46,7 @@ pipeline {
         }
         stage('DeployToProduction') {
             environment { 
-                CANARY_REPLICAS = 0
+                CANARY_REPLICAS = 172.31.30.98
             }
             steps {
                 input 'Deploy to Production?'
